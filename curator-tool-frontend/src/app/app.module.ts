@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 import { AttributeTableComponent } from './attribute-table/attribute-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AttributeTable1Component } from './attribute-table1/attribute-table1.component';
+import { TableSwitchComponent } from './table-switch/table-switch.component';
+import { TablePracticeComponent } from './table-practice/table-practice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TableSwitchComponent,
+
 
 
   ],
@@ -20,7 +24,8 @@ import { AttributeTable1Component } from './attribute-table1/attribute-table1.co
     BrowserAnimationsModule,
     AttributeTableComponent,
     AttributeTable1Component,
-    HttpClientModule
+    HttpClientModule,
+    TablePracticeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
