@@ -1,17 +1,53 @@
 .demo-table {
-    width: 100%;
-  }
-  
-  .mat-mdc-row .mat-mdc-cell {
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid transparent;
-    cursor: pointer;
-  }
-  
-  .mat-mdc-row:hover .mat-mdc-cell {
-    border-color: currentColor;
-  }
-  
-  .demo-row-is-clicked {
-    font-weight: bold;
-  }  
+
+  min-width: 40%;
+  height: 2%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+th {
+  background-color: rgb(0, 0, 0);
+  color: rgb(6, 6, 6);
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+  background-color: rgb(226, 104, 11);
+  color: white;
+
+
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: rgb(54, 93, 186);
+  color: rgb(255, 255, 255);
+
+}
+
+
+.demo-table .mat-mdc-cell {
+  color: rgb(253, 252, 254);
+
+}
+
+.header {
+  color: rgb(0, 0, 0);
+  background-color: rgb(226, 104, 11);
+  max-width: 10%;
+
+
+}
+
+.header:hover {
+  color: rgb(249, 141, 0);
+  background-color: rgb(0, 0, 0);
+  max-width: 10%;
+
+
+}

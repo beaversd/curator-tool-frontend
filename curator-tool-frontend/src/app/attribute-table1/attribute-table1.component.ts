@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,8 +9,6 @@ export interface PathwayData {
   category: string;
   name: string;
 }
-
-
 
 const PATHWAY_DATA: PathwayData[] = [
   {
@@ -56,23 +54,18 @@ const PATHWAY_DATA: PathwayData[] = [
 
 ]
 
-
-
-
 @Component({
-  selector: 'app-attribute-table',
-  templateUrl: './attribute-table.component.html',
-  styleUrls: ['./attribute-table.component.scss'],
+  selector: 'app-attribute-table1',
+  templateUrl: './attribute-table1.component.html',
+  styleUrls: ['./attribute-table1.component.scss'],
   standalone: true,
   imports: [MatTableModule, NgIf, NgFor],
 })
-export class AttributeTableComponent implements OnInit {
+export class AttributeTable1Component implements OnInit {
   displayedColumns: string[] = ['definingType', 'category', 'name', 'origin'];
   dataSource = PATHWAY_DATA;
   clickedRows = new Set<PathwayData>();
   constructor(private http: HttpClient) { }
-  @Input() testInput: string = "";
-
 
   ngOnInit() {
     // API Call
@@ -82,4 +75,5 @@ export class AttributeTableComponent implements OnInit {
         console.log(data);
       });
   }
+
 }

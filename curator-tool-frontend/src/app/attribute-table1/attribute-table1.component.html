@@ -1,8 +1,3 @@
-<div class="header">
-  {{testInput}}
-</div>
-
-
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- Origin Column -->
   <ng-container matColumnDef="origin">
@@ -34,7 +29,7 @@
     *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<!--
+
 <div>
   <h3>
     Click Log
@@ -50,4 +45,3 @@
     Clicked on {{clickedRow.category}}
   </li>
 </ul>
--->
