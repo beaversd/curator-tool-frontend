@@ -13,7 +13,8 @@ export class DataService {
   attributeDataurl = `${environment.ApiRoot}/getAttributes/`
   entityDataUrl = `${environment.ApiRoot}/findByDbId/`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
 
 
   fetchAttributeData(className: string): Observable<AttributTableData[]> {
@@ -26,8 +27,9 @@ export class DataService {
         return throwError(() => err);
       }))
       .pipe(map((data: AttributTableData[]) => {
+        console.log("dts:")
         console.log(data)
-        return data.map(value => new AttributTableData(value.name, value.properties))
+        return data.map(value => new AttributTableData(value.category, value.definingType, value.name, value.properties))
           .sort((a, b) => a.name.localeCompare(b.name));
       }));
   }
