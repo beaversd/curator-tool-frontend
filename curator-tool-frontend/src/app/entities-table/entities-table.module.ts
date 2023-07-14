@@ -5,16 +5,22 @@ import { EntriesTableEffects } from './state/entries-table.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { entriesTableReducer } from './state/entries-table.reducers';
+import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
+import { EntitiesTableRoutingModule } from './entities-table-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+     EntriesTableComponent,
+     ToolBarComponent
+  ],
   imports: [
     CommonModule,
-    EntriesTableComponent,
+    EntitiesTableRoutingModule,
     EffectsModule.forFeature(EntriesTableEffects),
-    StoreModule.forFeature('entriesDataState', entriesTableReducer)
-  ]
+    StoreModule.forFeature('entriesDataState', entriesTableReducer),
+    SharedModule  ],
 })
 export class EntitiesTableModule { }
