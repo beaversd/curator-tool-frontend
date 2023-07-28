@@ -7,8 +7,4 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'curator-tool-frontend';
-  testClassName: string = "testClassName"
-  ngOnInit() {
-  }
 }
-
