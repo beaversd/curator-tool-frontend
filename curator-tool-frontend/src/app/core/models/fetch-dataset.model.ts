@@ -10,6 +10,7 @@ export interface AttributeData {
   definingType: 'UNDEFINED' | 'ALL_DEFINING',
   name: string;
   properties: AttributeProperty;
+
 }
 
 export class AttributTableData implements AttributeData {
@@ -17,7 +18,11 @@ export class AttributTableData implements AttributeData {
     public category: 'OPTIONAL' | 'MANDATORY' | 'REQUIRED' | 'NOMANUALEDIT',
     public definingType: 'UNDEFINED' | 'ALL_DEFINING',
     public name: string,
-    public properties: AttributeProperty) {
+    public properties: AttributeProperty
+  ) {
+
+    this.properties.attributeClasses[0].type = toClassName(properties.attributeClasses[0].type);
+    this.properties.origin = toClassName(properties.origin);
 
   }
 }
@@ -25,6 +30,13 @@ export class AttributTableData implements AttributeData {
 export function toAttributeClassName(props: AttributeProperty) {
   const type = props.attributeClasses[0].type;
   let typeArray = type.split(".");
+  let index = typeArray.length;
+  return typeArray[index - 1];
+}
+
+
+export function toClassName(props: string) {
+  let typeArray = props.split(".");
   let index = typeArray.length;
   return typeArray[index - 1];
 }

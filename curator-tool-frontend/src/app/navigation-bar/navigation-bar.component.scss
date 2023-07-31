@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #00072ae1;
+    color: white;
+    padding: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.non-clickable {
+
+    opacity: 0.5;
+    cursor: default;
+}

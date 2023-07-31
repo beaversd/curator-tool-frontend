@@ -12,9 +12,10 @@ import { environment } from 'src/environments/environment.dev';
 export class DataService {
   attributeDataurl = `${environment.ApiRoot}/getAttributes/`
   entityDataUrl = `${environment.ApiRoot}/findByDbId/`;
+  schemaClassUrl = `${environment.ApiRoot}/getSchemaClasses/`
 
   constructor(private http: HttpClient) {
-   }
+  }
 
 
   fetchAttributeData(className: string): Observable<AttributTableData[]> {
@@ -50,4 +51,11 @@ export class DataService {
           return { key, value, type }
         })));
   }
+
+  fetchSchemaClasses(): Observable<string[]> {
+
+    return this.http.get<string[]>(this.schemaClassUrl)
+
+  }
 }
+

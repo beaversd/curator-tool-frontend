@@ -13,11 +13,16 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment.dev';
 import { EffectsModule } from '@ngrx/effects';
 import { TablePracticeComponent } from './table-practice/table-practice.component';
+import { TableMenuComponent } from './table-menu/table-menu.component';
+import { SharedModule } from './shared/shared.module';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 @NgModule({
   declarations: [
+    NavigationBarComponent,
     AppComponent
+
 
 
 
@@ -25,10 +30,13 @@ import { TablePracticeComponent } from './table-practice/table-practice.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     BrowserAnimationsModule,
     AttributeTableComponent,
     HttpClientModule,
     AttributeTableModule,
+    TablePracticeComponent,
+    TableMenuComponent,
     EntitiesTableModule,
     EffectsModule.forRoot(),
     StoreModule.forRoot({}, {}),

@@ -1,5 +1,11 @@
 <!-- <app-table [className] = "testClassName"-practice></app-table-practice> -->
-<router-outlet></router-outlet>
-<app-entries-table></app-entries-table>
-<app-table-practice></app-table-practice>
-<!-- <app-entries-table></app-entries-table> -->
+
+<div class="nav">
+    <app-navigation-bar></app-navigation-bar>
+</div>
+
+<div class="position">
+    <app-table-menu></app-table-menu>
+    <router-outlet></router-outlet>
+</div>
+<!-- <app-table-practice></app-table-practice> -->
