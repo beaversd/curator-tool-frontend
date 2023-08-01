@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment.dev';
 export class DataService {
   attributeDataurl = `${environment.ApiRoot}/getAttributes/`
   entityDataUrl = `${environment.ApiRoot}/findByDbId/`;
+  schemaClassUrl = `${environment.ApiRoot}/getSchemaClasses/`
 
   constructor(private http: HttpClient) {
    }
@@ -52,10 +53,7 @@ export class DataService {
   }
 
   fetchSchemaClasses(): Observable<string[]> {
-    let stringArray: string[] = [];
-    return this.http.get<string[]>(`http://localhost:8080/api/curation/getSchemaClasses`)
-      .pipe(map((data: string[]) => {
-        return data;
-      }));
+
+    return this.http.get<string[]>(this.schemaClassUrl)
   }
 }

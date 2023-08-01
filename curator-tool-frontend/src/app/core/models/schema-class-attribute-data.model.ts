@@ -22,6 +22,8 @@ export class AttributTableData implements AttributeData {
     public properties: AttributeProperty,
     ) {
     this.properties.className = this.properties.origin.split('.').slice(-1)[0];
+    this.properties.origin = toClassName(properties.origin);
+
   }
 }
 
@@ -31,3 +33,10 @@ export function toAttributeClassName(props: AttributeProperty) {
   let index = typeArray.length;
   return typeArray[index - 1];
 }
+
+export function toClassName(props: string) {
+  let typeArray = props.split(".");
+  let index = typeArray.length;
+  return typeArray[index - 1];
+}
+
