@@ -6,6 +6,7 @@ import { AttributeTableEffects } from './state/attribute-table.effects';
 import { StoreModule } from '@ngrx/store';
 import { attributeTableReducer } from './state/attribute-table.reducers';
 import { EffectsModule } from '@ngrx/effects';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
     CommonModule,
     AttributeTableRoutingModule,
     AttributeTableComponent,
+    RouterModule,
     EffectsModule.forFeature(AttributeTableEffects),
     StoreModule.forFeature('attributeDataState', attributeTableReducer)
   ]
