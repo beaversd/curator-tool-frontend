@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { AttributeTableComponent } from './attribute-table/pages/attributeTable/attribute-table.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AttributeTableModule } from './attribute-table/attribute-table.module';
-import { EntitiesTableModule } from './entities-table/entities-table.module';
+import { EntriesTableModule } from './entries-table/entries-table.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment.dev';
@@ -26,27 +26,31 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 
 
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    AttributeTableComponent,
-    HttpClientModule,
-    AttributeTableModule,
-    TablePracticeComponent,
-    TableMenuComponent,
-    EntitiesTableModule,
-    EffectsModule.forRoot(),
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-      autoPause: true,
+@NgModule({
+      declarations: [
+        AppComponent,
+      ],
+      imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        AttributeTableComponent,
+        HttpClientModule,
+        AttributeTableModule,
+        TablePracticeComponent,
+        TableMenuComponent,
+        EntitiesTableModule,
+        EntriesTableModule,
+        EffectsModule.forRoot(),
+        StoreModule.forRoot({}, {}),
+        StoreDevtoolsModule.instrument({
+          maxAge: 25,
+          logOnly: environment.production,
+          autoPause: true,
+        })
+      ],
+      providers: [],
+      bootstrap: [AppComponent],
     })
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule { }
+    export class AppModule { }

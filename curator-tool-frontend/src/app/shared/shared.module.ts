@@ -5,13 +5,14 @@ import { SchemaPanelComponent } from './layout/schema-panel/schema-panel.compone
 import { MaterialModule } from '../material/material.module';
 
 
+
 @NgModule({
   imports: [
     RouterModule,
     CommonModule,
-
+    MaterialModule,
+    RouterModule
   ],
-  declarations: [SchemaPanelComponent],
-  exports: [SchemaPanelComponent, MaterialModule]
+  exports: [MaterialModule, SchemaPanelComponent]
 })
 export class SharedModule { }

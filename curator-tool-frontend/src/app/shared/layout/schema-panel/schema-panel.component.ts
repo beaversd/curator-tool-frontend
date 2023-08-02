@@ -1,35 +1,15 @@
-import { NgIf, NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Observable } from 'rxjs';
-import { DataService } from 'src/app/core/services/data.service';
-
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-schema-panel',
     templateUrl: './schema-panel.component.html',
-    styleUrls: ['./schema-panel.component.scss'],
-
+    styleUrls: ['./schema-panel.component.scss']
 })
-export class SchemaPanelComponent implements OnInit {
-    menuItems$: Observable<string[]> = this.dataservice.fetchSchemaClasses();
-    menuItems: string[] = this.setMenuItems();;
+export class SchemaPanelComponent {
 
-    constructor(private dataservice: DataService) { }
+}
 
+ngOnInit() {
 
-
-    setMenuItems(): string[] {
-        let tempArray: string[] = [];
-        this.dataservice.fetchSchemaClasses()
-            .pipe()
-            .subscribe(schemaClasses => {
-                this.menuItems = schemaClasses.sort((a, b) => a.localeCompare(b));
-            })
-        return tempArray;
-    }
-
-    ngOnInit() {
-
-    }
+}
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { AttributTableData } from '../models/fetch-dataset.model';
-import { catchError, map, Observable, throwError } from 'rxjs';
-import { KeyValuePair } from '../models/key-value.model';
+import { AttributTableData } from '../models/schema-class-attribute-data.model';
+import { catchError, map, Observable, pipe, throwError } from 'rxjs';
+import { EntryData } from '../models/entry-data.model';
 import { environment } from 'src/environments/environment.dev';
 
 
@@ -35,7 +35,7 @@ export class DataService {
       }));
   }
 
-  fetchEntityData(dbId: string): Observable<KeyValuePair[]> {
+  fetchEntityData(dbId: string): Observable<EntryData[]> {
     return this.http.get<{ [key: string]: any }>(this.entityDataUrl + `${dbId}`)
       .pipe(
         catchError((err: Error) => {
@@ -48,14 +48,13 @@ export class DataService {
         map(data => Object.keys(data).map(key => {
           const value = data[key];
           const type = value instanceof Array ? 'array' : typeof value;
-          return { key, value, type }
+          return { key, value, type };
         })));
   }
 
   fetchSchemaClasses(): Observable<string[]> {
 
     return this.http.get<string[]>(this.schemaClassUrl)
-
   }
 }
 

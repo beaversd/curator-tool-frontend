@@ -8,31 +8,52 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatListModule} from "@angular/material/list";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSortModule} from "@angular/material/sort";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatTableModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    MatSelectModule, 
-    FormsModule, 
-    ReactiveFormsModule, 
-    MatInputModule, 
-    MatToolbarModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatDialogModule,
+    MatSortModule,
+    MatTabsModule,
+    MatIconModule,
+    MatCardModule
   ],
   exports: [
     MatTableModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatSlideToggleModule,
     MatFormFieldModule,
-    MatSelectModule, 
-    FormsModule, 
-    ReactiveFormsModule, 
-    MatInputModule, 
-    MatToolbarModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatDialogModule,
+    MatSortModule,
+    MatTabsModule,
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class MaterialModule { }
