@@ -17,40 +17,31 @@ import { TableMenuComponent } from './table-menu/table-menu.component';
 import { SharedModule } from './shared/shared.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
-
 @NgModule({
   declarations: [
+    AppComponent,
     NavigationBarComponent,
-    AppComponent
-
-
-
-
-@NgModule({
-      declarations: [
-        AppComponent,
-      ],
-      imports: [
-        BrowserModule,
-        AppRoutingModule,
-        SharedModule,
-        BrowserAnimationsModule,
-        AttributeTableComponent,
-        HttpClientModule,
-        AttributeTableModule,
-        TablePracticeComponent,
-        TableMenuComponent,
-        EntitiesTableModule,
-        EntriesTableModule,
-        EffectsModule.forRoot(),
-        StoreModule.forRoot({}, {}),
-        StoreDevtoolsModule.instrument({
-          maxAge: 25,
-          logOnly: environment.production,
-          autoPause: true,
-        })
-      ],
-      providers: [],
-      bootstrap: [AppComponent],
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    BrowserAnimationsModule,
+    AttributeTableComponent,
+    HttpClientModule,
+    AttributeTableModule,
+    TablePracticeComponent,
+    TableMenuComponent,
+    EntriesTableModule,
+    EffectsModule.forRoot(),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+      autoPause: true,
     })
-    export class AppModule { }
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule { }

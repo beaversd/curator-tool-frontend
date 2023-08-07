@@ -1,9 +1,9 @@
-import {createFeatureSelector, createSelector, Store} from "@ngrx/store";
-import {EntriesDataState} from "./entries-table.reducers"
-import {selectAttributeDataState} from "src/app/attribute-table/state/attribute-table.selectors";
-import {toDataType} from "src/app/core/models/schema-class-entry-data.model";
-import {toAttributeClassName} from "src/app/core/models/schema-class-attribute-data.model";
-import {map, tap, zip} from "rxjs";
+import { createFeatureSelector, createSelector, Store } from "@ngrx/store";
+import { EntriesDataState } from "./entries-table.reducers"
+import { selectAttributeDataState } from "src/app/attribute-table/state/attribute-table.selectors";
+import { toDataType } from "src/app/core/models/schema-class-entry-data.model";
+import { toAttributeClassName } from "src/app/core/models/schema-class-attribute-data.model";
+import { map, tap, zip } from "rxjs";
 
 export const selectEntriesDataState =
   createFeatureSelector<EntriesDataState>('entriesDataState')
@@ -17,7 +17,7 @@ export const selectEntriesData = (dbId: string) => createSelector(
 export const selectEntry = (attributeName: string, dbId: string) => createSelector(
   selectEntriesDataState,
   (state: EntriesDataState) => state.entities[dbId]?.entriesData.filter(
-    d => d.key === attributeName))
+    (d: { key: string; }) => d.key === attributeName))
 
 export const selectSchemaClassArray = (store: Store, dbId: string, className: string) => zip(
   store.select(selectAttributeDataState),

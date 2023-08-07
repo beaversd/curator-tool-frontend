@@ -23,13 +23,11 @@ export class AttributTableData implements AttributeData {
     public properties: AttributeProperty
   ) {
 
-    this.properties.attributeClasses[0].type = toClassName(properties.attributeClasses[0].type);
-    public properties: AttributeProperty,
-    ) {
-  this.properties.className = this.properties.origin.split('.').slice(-1)[0];
-  this.properties.origin = toClassName(properties.origin);
+    this.properties.origin = toClassName(properties.origin);
 
-}
+
+
+  }
 }
 
 export function toAttributeClassName(props: AttributeProperty) {
