@@ -43,15 +43,11 @@ import { SharedModule }
 
   styleUrls: ['./attribute-table.component.scss'],
 
-  standalone:
-    true,
-
-  imports: [MatTableModule, NgIf, NgFor, SharedModule, RouterModule],
 
 })
 
-export class AttributeTableComponent
-  implements OnInit {
+export class AttributeTableComponent implements OnInit {
+
 
   displayedColumns:
     string[] = ['attributeName',
@@ -71,6 +67,7 @@ export class AttributeTableComponent
 
   className:
     any = "";
+
 
 
 

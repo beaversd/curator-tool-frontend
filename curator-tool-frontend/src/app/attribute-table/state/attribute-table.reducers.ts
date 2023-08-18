@@ -1,9 +1,9 @@
-import {createReducer, on} from "@ngrx/store";
-import {AttributeData} from "src/app/core/models/schema-class-attribute-data.model";
-import {setAttributeData} from "./attribute-table.actions";
-import {createEntityAdapter, EntityState} from "@ngrx/entity";
-import {setEntriesData} from "../../entries-table/state/entries-table.actions";
-import {EntriesData} from "../../entries-table/state/entries-table.reducers";
+import { createReducer, on } from "@ngrx/store";
+import { AttributeData } from "src/app/core/models/schema-class-attribute-data.model";
+import { setAttributeData } from "./attribute-table.actions";
+import { createEntityAdapter, EntityState } from "@ngrx/entity";
+import { setEntriesData } from "../../entries-table/state/entries-table.actions";
+import { EntriesData } from "../../entries-table/state/entries-table.reducers";
 
 export interface AttributeDataEntity {
   className: string
@@ -11,6 +11,7 @@ export interface AttributeDataEntity {
 }
 
 export interface AttributeDataState extends EntityState<AttributeDataEntity> {
+  entities: any;
 }
 
 export const attributeDataAdapter = createEntityAdapter<AttributeDataEntity>({
@@ -22,6 +23,6 @@ export const initialState: AttributeDataState = attributeDataAdapter.getInitialS
 export const attributeTableReducer =
   createReducer(
     initialState,
-    on(setAttributeData, (state, { className, attributeData}) => attributeDataAdapter.upsertOne({className: className, attributeData: attributeData}, state))
+    on(setAttributeData, (state, { className, attributeData }) => attributeDataAdapter.upsertOne({ className: className, attributeData: attributeData }, state))
   );
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/core/services/data.service';
 
@@ -10,24 +10,29 @@ import { DataService } from 'src/app/core/services/data.service';
 
 })
 export class SchemaPanelComponent implements OnInit {
-    menuItems$: Observable<string[]> = this.dataservice.fetchSchemaClasses();
-    menuItems: string[] = this.setMenuItems();
+    //menuItems$: Observable<string[]> = this.dataservice.fetchSchemaClasses();
+    @Input() dataSource: string[] = new Array<string>;
+    // menuItems: string[] = this.setMenuItems();
 
     constructor(private dataservice: DataService) { }
 
 
 
-    setMenuItems(): string[] {
-        let tempArray: string[] = [];
-        this.dataservice.fetchSchemaClasses()
-            .pipe()
-            .subscribe(schemaClasses => {
-                this.menuItems = schemaClasses.sort((a, b) => a.localeCompare(b));
-            })
-        return tempArray;
-    }
+    // setMenuItems(): string[] {
+    //     let tempArray: string[] = [];
+    //     this.dataservice.fetchSchemaClasses()
+    //         .pipe()
+    //         .subscribe(schemaClasses => {
+    //             this.menuItems = schemaClasses.sort((a, b) => a.localeCompare(b));
+    //         })
+    //     return tempArray;
+    // }
 
     ngOnInit() {
 
     }
+}
+
+function Import(): (target: SchemaPanelComponent, propertyKey: "dataSource") => void {
+    throw new Error('Function not implemented.');
 }

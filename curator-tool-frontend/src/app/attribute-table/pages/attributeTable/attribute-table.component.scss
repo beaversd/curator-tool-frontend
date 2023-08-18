@@ -1,5 +1,20 @@
 .demo-table {
-  width: 100%;
+  table-layout: flex;
+  min-width: 100%;
+  max-width: 100%;
+
+
+  tr.mat-header-row {
+    background-color: #00072ae1;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dadada;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #fbfbfb;
+  }
 }
 
 .mat-mdc-row .mat-mdc-cell {
@@ -10,7 +25,7 @@
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
-  border-color: currentColor;
+  border-color: rgb(69, 127, 236);
 }
 
 .demo-row-is-clicked {

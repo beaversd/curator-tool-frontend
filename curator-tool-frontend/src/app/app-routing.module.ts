@@ -11,14 +11,15 @@ const routes: Routes = [
     path: "attribute-table",
     loadChildren: () =>
       import("./attribute-table/attribute-table.module").then((m) =>
-          m.AttributeTableModule),
+        m.AttributeTableModule),
   },
   {
     path: "entries-table",
     loadChildren: () =>
       import("./entries-table/entries-table.module").then((m) =>
-      m.EntriesTableModule),
+        m.EntriesTableModule),
   }
+
 
 ];
 

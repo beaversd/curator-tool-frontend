@@ -17,17 +17,18 @@ import { TableMenuComponent } from './table-menu/table-menu.component';
 import { SharedModule } from './shared/shared.module';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    AttributeTableComponent,
     HttpClientModule,
     AttributeTableModule,
     TablePracticeComponent,

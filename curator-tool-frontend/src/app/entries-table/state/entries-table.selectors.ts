@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector, Store } from "@ngrx/store";
 import { EntriesDataState } from "./entries-table.reducers"
 import { selectAttributeDataState } from "src/app/attribute-table/state/attribute-table.selectors";
 import { toDataType } from "src/app/core/models/schema-class-entry-data.model";
-import { toAttributeClassName } from "src/app/core/models/schema-class-attribute-data.model";
+import { AttributeProperty, toAttributeClassName } from "src/app/core/models/schema-class-attribute-data.model";
 import { map, tap, zip } from "rxjs";
 
 export const selectEntriesDataState =
@@ -25,8 +25,8 @@ export const selectSchemaClassArray = (store: Store, dbId: string, className: st
 ).pipe(
   map(([attributes, entries]) => {
     const entriesMap = new Map(
-      entries.entities[dbId]?.entriesData.map(e => [e.key, e.value]));
-    return attributes.entities[className]?.attributeData.map(attribute => ({
+      entries.entities[dbId]?.entriesData.map((e: { key: any; value: any; }) => [e.key, e.value]));
+    return attributes.entities[className]?.attributeData.map((attribute: { name: unknown; properties: AttributeProperty; }) => ({
       ...attribute,
       value: entriesMap.get(attribute.name),
       type: toDataType(attribute.properties)
